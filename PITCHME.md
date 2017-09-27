@@ -3,7 +3,7 @@
 
 ### GitPitch turns <span style="color: #e49436; text-transform: none">PITCHME.md</span> into interactive, online slideshows.
 <br>
-<span style="color:gray; font-size:0.6em;">[ JUST LIKE THIS ONE ]</span>
+<span style="color:gray; font-size:0.6em;">[ JUST LIKE THIS ONE ]</span><br>
 No more <span style="color: #666666">Keynote.</span>
 No more <span style="color: #666666">Powerpoint.</span>
 <br>
@@ -13,15 +13,15 @@ For Details [\[ GitPitch \] gitpitch/gitpitch/master](https://gitpitch.com/gitpi
 ---
 
 ### Git is a version control system.
-![POST Office Method](https://github.com/djmonta/gitpitch/raw/master/public/images/posts-method.png)
+<br>
+有名な郵便局メソッドで概要を理解<br>
+Understanding concepts by the famous POST office method.
 
 ---
 
-<span style="color: #e49436">STEP 1. PITCHME.md</span>
-
-![MARKDOWN](https://d1z75bzl1vljy2.cloudfront.net/hello-world/markdown.png)
-
-Create GitPitch slideshow content using GitHub flavored Markdown in your favorite editor.
+![POST Office Method](https://github.com/djmonta/gitpitch/raw/master/public/images/posts-method.png)
+<br>
+<span style="color:gray; font-size:0.6em;">[ [デザイナーがこうやってGit覚えて大好きになったよ♡ - Qiita](https://qiita.com/yunico-jp/items/87bdd13971e82833f6bb) ]</span><br>
 
 ---
 
