@@ -1,18 +1,22 @@
-# Tips for Git and Github
+# Tips for<br>Git and Github
 ---
 
+このスライドは `GitPitch` というアプリケーションで動いています<br>
 ### GitPitch turns <span style="color: #e49436; text-transform: none">PITCHME.md</span> into interactive, online slideshows.
 <br>
 <span style="color:gray; font-size:0.6em;">[ JUST LIKE THIS ONE ]</span><br>
-No more <span style="color: #666666">Keynote.</span>
+No more <span style="color: #666666">Keynote.</span><br>
 No more <span style="color: #666666">Powerpoint.</span>
-<br>
+
+----
+
 ### Just <span style="color: #e49436">Markdown</span>. Then <span style="color: #e49436">Git-Commit</span>.
-For Details [\[ GitPitch \] gitpitch/gitpitch/master](https://gitpitch.com/gitpitch/gitpitch)
+For Details [\[ GitPitch \]](https://gitpitch.com/gitpitch/gitpitch)
 
 ---
 
-### Git is a version control system.
+## 本題に入ります
+### <span style="color: #e49436">Git</span> is a version control system.
 <br>
 有名な郵便局メソッドで概要を理解<br>
 Understanding concepts by the famous POST office method.
@@ -21,56 +25,118 @@ Understanding concepts by the famous POST office method.
 
 ![POST Office Method](https://github.com/djmonta/gitpitch/raw/master/public/images/posts-method.png)
 <br>
-<span style="color:gray; font-size:0.6em;">[ [デザイナーがこうやってGit覚えて大好きになったよ♡ - Qiita](https://qiita.com/yunico-jp/items/87bdd13971e82833f6bb) ]</span><br>
+<span style="color:gray; font-size:0.6em;">[デザイナーがこうやってGit覚えて大好きになったよ♡ - Qiita](https://qiita.com/yunico-jp/items/87bdd13971e82833f6bb)</span><br>
 
 ---
 
-<span style="color: #e49436">STEP 2. GIT-COMMIT</span>
+## Git Tips 1
+### git stash
+あるある事例: ローカルでコミットしていない差分があり、 `Pull` でエラーが起きて出来ない
+↓
 
-![TERMINAL](https://d1z75bzl1vljy2.cloudfront.net/hello-world/terminal.png)
+<span style="color:gray; font-size:0.6em;">参考: [変更を一時的に退避！キメろgit stash - Qiita](https://qiita.com/fukajun/items/41288806e4733cb9c342)</span><br>
 
-Git-commit on any branch and push your PITCHME.md to GitHub, GitLab, Bitbucket, Gitea, Gogs, or GitBucket.
++++
+#### 保存
+
+```
+$ git stash save
+```
+
++++
+#### リスト
+
+```
+$ git stash show
+```
+
++++
+#### 適用
+
+```
+$ git stash apply stash@{0}
+```
+
+#### 適用と同時にstashを削除
+
+```
+$ git stash pop stash@{0}
+```
 
 ---
 
-<span style="color: #e49436">STEP 3. GET THE WORD OUT!</span>
+## Git Tips 2
+### git reset
+あるある事例: 変更前の状態に戻したい、動作確認したい<br>
+↓
 
+<span style="color:gray; font-size:0.6em;">参考: [git reset についてもまとめてみる - murankの日記](http://d.hatena.ne.jp/murank/20110327/1301224770)</span><br>
+<span style="color:gray; font-size:0.6em;">参考: [git resetでどのオプション(hard, mixed, soft)を指定すべきか、シチュエーション別に分けてみる - Qiita](https://qiita.com/kmagai/items/6b4bfe3fddb00769aec4)</span><br>
+
++++
+#### 前回のコミット時点に戻りたい
+
+```
+$ git reset --hard HEAD
+```
+
+`--hard` オプションは、コミットしていない変更があっても無視します（保存しておきたい場合は、 `stash` か `checkout -b [branch name]` ）
+
++++
+#### あるコミット時点の動作確認をしたい
+
+```
+$ git reset --hard [commit hash]
+```
+
+```
+$ git checkout [commit hash]
+```
+
+一時的なブランチが作成されるため、より安全。
+
+---
+
+## Github Tips 1
+### Keyboard shortcut
+
+![Keyboard Shortcut](https://github.com/djmonta/gitpitch/raw/master/public/images/keyboard-shortcut.png)
 <br>
+↓
 
-<span style="font-size: 1.3em;"><span style="color:white">htt</span><span style="color:white">ps://git</span><span style="color: #e49436">pitch</span><span style="color: white">.com/<span style="color: #e49436">user</span>/<span style="color: #e49436">repo</span>/<span style="color: #e49436">branch</span></span>
++++
+#### Code browsing
+`t` : ファイル検索
+`l` : 行に飛ぶ
 
++++
+#### Repository
+`g``c` : Code
+`g``i` : Issues
+`g``p` : Pull Requests
+`g``w` : Wiki
+
+---
+
+## Github Tips 2
+### `hub` コマンド
+
+```
+$ hub clone tiimgreen/toc
+```
+
+↓
 <br>
+<span style="color:gray; font-size:0.6em;">[github/hub: hub helps you win at git.](https://github.com/github/hub)</span>
 
-Instantly use your GitPitch slideshow URL to promote, pitch or present absolutely anything.
++++
+#### Installation
 
----
-
-<span style="color: #e49436">GIT</span>PITCH DESIGNED FOR SHARING
-
-![SOCIAL](https://d1z75bzl1vljy2.cloudfront.net/hello-world/gp-social.jpg)
-
-- View any slideshow at its public URL
-- Promote any slideshow using a GitHub badge
-- Embed any slideshow within a blog or website
-- Share any slideshow on Twitter, LinkedIn, etc
-- Print any slideshow as a PDF document
-- Download and present any slideshow offline
+```
+$ brew install hub
+```
 
 ---
 
-<span style="color: #e49436">GIT</span>PITCH FEATURE RICH SLIDESHOWS
-
-- GitHub Flavored Markdown +
-- Code Presenting for Blocks, Files, and GISTs
-- Image and Video Slides
-- Custom Logos and Backgrounds
-- Multiple Themes And More
-- <span style="color: #e49436">Plus...</span>
-- Your Slideshow Is Part Of Your Project
-- Under Git Version Control Within Your Git Repo
-
-
----
-
-### Go for it.
-### Just add <span style="color: #e49436; text-transform: none">PITCHME.md</span> ;)
+### Thank you!
+![We are gonna great team](https://media.giphy.com/media/g4NuKdLuh0roQ/giphy.gif)
