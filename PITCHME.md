@@ -1,8 +1,7 @@
-# Tips for<br>Git and Github
+# Tips for<br><span style="color: #e49436">Git</span> and <span style="color: #e49436">Github</span>
 ---
 
-<p style="font-size:0.45em;">
-このスライドは `GitPitch` というアプリケーションで動いています<br>
+<span style="font-size:0.45em;">このスライドは `GitPitch` というアプリケーションで動いています</span><br>
 GitPitch turns <span style="color: #e49436; text-transform: none">PITCHME.md</span> into interactive, online slideshows.
 <br>
 <span style="color:gray; font-size:0.45em;">[ JUST LIKE THIS ONE ]</span><br>
@@ -13,7 +12,7 @@ No more <span style="color: #666666">Powerpoint.</span>
 ----
 
 ### Just <span style="color: #e49436">Markdown</span>. Then <span style="color: #e49436">Git-Commit</span>.
-For Details : [\[ GitPitch \]](https://gitpitch.com/gitpitch/gitpitch)
+<span style="color:gray; font-size:0.3em;">For Details : [\[ GitPitch \]](https://gitpitch.com/gitpitch/gitpitch)</span>
 
 ---
 
@@ -29,8 +28,8 @@ For Details : [\[ GitPitch \]](https://gitpitch.com/gitpitch/gitpitch)
 ---
 
 ![POST Office Method](https://github.com/djmonta/gitpitch/raw/master/public/images/posts-method.png)
-<br>
-参考: [デザイナーがこうやってGit覚えて大好きになったよ♡ - Qiita](https://qiita.com/yunico-jp/items/87bdd13971e82833f6bb)
+
+<span style="color:gray; font-size:0.3em;">参考: [デザイナーがこうやってGit覚えて大好きになったよ♡ - Qiita](https://qiita.com/yunico-jp/items/87bdd13971e82833f6bb)</span>
 
 ---
 
@@ -67,7 +66,7 @@ $ git stash list -p
 $ git stash apply stash@{0}
 ```
 
-`stash@{0}` には、 `stash list` で先頭に出てくる値を入れる
+<span style="color:gray; font-size:0.3em;">`stash@{0}` には、 `stash list` で先頭に出てくる値を入れる</span>
 
 #### 適用と同時にstashを削除
 
@@ -94,7 +93,8 @@ $ git stash pop stash@{0}
 $ git reset --hard HEAD
 ```
 
-`--hard` オプションは、コミットしていない変更があっても無視します（保存しておきたい場合は、 `stash` か `checkout -b [branch name]` ）
+<span style="color:gray; font-size:0.3em;">`--hard` オプションは、コミットしていない変更があっても無視<br>
+保存しておきたい場合は、 `stash` か `checkout -b [branch name]`</span>
 
 +++
 #### あるコミット時点の動作確認をしたい
@@ -103,13 +103,13 @@ $ git reset --hard HEAD
 $ git reset --hard [commit hash]
 ```
 
-<br>
+#### あるコミット時点でブランチを切る
 
 ```
 $ git checkout [commit hash]
 ```
 
-一時的なブランチが作成されるため、より安全。
+<span style="color:gray; font-size:0.3em;">こちらの方が、より安全。</span>
 
 +++
 
@@ -155,12 +155,12 @@ $ brew install hub
 
 +++
 
-For Details : [github/hub: hub helps you win at git.](https://github.com/github/hub)
+<span style="color:gray; font-size:0.3em;">For Details : [github/hub: hub helps you win at git.](https://github.com/github/hub)</span>
 
 ---
 
 ### Thank you!
 ![We are gonna great team](https://media.giphy.com/media/g4NuKdLuh0roQ/giphy.gif)
 
-<span style="color: #e49436">[github-cheat-sheet/README.ja.md at master · tiimgreen/github-cheat-sheet](https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.ja.md)</span>
+<span style="color:gray; font-size:0.3em;">参考: [github-cheat-sheet/README.ja.md at master · tiimgreen/github-cheat-sheet](https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.ja.md)</span>
 
