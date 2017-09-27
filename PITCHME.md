@@ -161,3 +161,6 @@ For Details : [github/hub: hub helps you win at git.](https://github.com/github/
 
 ### Thank you!
 ![We are gonna great team](https://media.giphy.com/media/g4NuKdLuh0roQ/giphy.gif)
+
+<span style="color: #e49436">[github-cheat-sheet/README.ja.md at master · tiimgreen/github-cheat-sheet](https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.ja.md)</span>
+
