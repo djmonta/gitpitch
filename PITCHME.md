@@ -1,40 +1,46 @@
 # Tips for<br>Git and Github
 ---
 
+<p style="font-size:50%;">
 このスライドは `GitPitch` というアプリケーションで動いています<br>
-### GitPitch turns <span style="color: #e49436; text-transform: none">PITCHME.md</span> into interactive, online slideshows.
+GitPitch turns <span style="color: #e49436; text-transform: none">PITCHME.md</span> into interactive, online slideshows.
 <br>
-<span style="color:gray; font-size:0.6em;">[ JUST LIKE THIS ONE ]</span><br>
-No more <span style="color: #666666">Keynote.</span><br>
+<span style="color:gray; font-size:50%;">[ JUST LIKE THIS ONE ]</span><br>
+No more <span style="color: #666666">Keynote.<br>
 No more <span style="color: #666666">Powerpoint.</span>
+</p>
 
 ----
 
 ### Just <span style="color: #e49436">Markdown</span>. Then <span style="color: #e49436">Git-Commit</span>.
-For Details [\[ GitPitch \]](https://gitpitch.com/gitpitch/gitpitch)
+For Details : [\[ GitPitch \]](https://gitpitch.com/gitpitch/gitpitch)
 
 ---
 
-## 本題に入ります
+<span style="color:gray; font-size:50%;">本題に入ります</span>
+
+---
+
 ### <span style="color: #e49436">Git</span> is a version control system.
 <br>
 有名な郵便局メソッドで概要を理解<br>
-Understanding concepts by the famous POST office method.
+<span style="color:gray; font-size:50%;">Understanding concepts by "POST office method".</span>
 
 ---
 
 ![POST Office Method](https://github.com/djmonta/gitpitch/raw/master/public/images/posts-method.png)
 <br>
-<span style="color:gray; font-size:0.6em;">[デザイナーがこうやってGit覚えて大好きになったよ♡ - Qiita](https://qiita.com/yunico-jp/items/87bdd13971e82833f6bb)</span><br>
+参考: [デザイナーがこうやってGit覚えて大好きになったよ♡ - Qiita](https://qiita.com/yunico-jp/items/87bdd13971e82833f6bb)
 
 ---
 
 ## Git Tips 1
 ### git stash
-あるある事例: ローカルでコミットしていない差分があり、 `Pull` でエラーが起きて出来ない
+あるある事例:<br>
+ローカルでコミットしていない差分があり、 `Pull` でエラーが起きて出来ない<br>
 ↓
-
-<span style="color:gray; font-size:0.6em;">参考: [変更を一時的に退避！キメろgit stash - Qiita](https://qiita.com/fukajun/items/41288806e4733cb9c342)</span><br>
+<br>
+- 参考: [変更を一時的に退避！キメろgit stash - Qiita](https://qiita.com/fukajun/items/41288806e4733cb9c342)
 
 +++
 #### 保存
@@ -47,7 +53,13 @@ $ git stash save
 #### リスト
 
 ```
-$ git stash show
+$ git stash list
+```
+
+#### 変更の内容も見る
+
+```
+$ git stash list -p
 ```
 
 +++
@@ -56,6 +68,8 @@ $ git stash show
 ```
 $ git stash apply stash@{0}
 ```
+
+`stash@{0}` には、 `stash list` で先頭に出てくる値を入れる
 
 #### 適用と同時にstashを削除
 
@@ -67,11 +81,12 @@ $ git stash pop stash@{0}
 
 ## Git Tips 2
 ### git reset
-あるある事例: 変更前の状態に戻したい、動作確認したい<br>
+あるある事例:<br>
+変更前の状態に戻したい、動作確認したい<br>
 ↓
-
-<span style="color:gray; font-size:0.6em;">参考: [git reset についてもまとめてみる - murankの日記](http://d.hatena.ne.jp/murank/20110327/1301224770)</span><br>
-<span style="color:gray; font-size:0.6em;">参考: [git resetでどのオプション(hard, mixed, soft)を指定すべきか、シチュエーション別に分けてみる - Qiita](https://qiita.com/kmagai/items/6b4bfe3fddb00769aec4)</span><br>
+<br>
+- 参考: [git reset についてもまとめてみる - murankの日記](http://d.hatena.ne.jp/murank/20110327/1301224770)
+- 参考: [git resetでどのオプション(hard, mixed, soft)を指定すべきか、シチュエーション別に分けてみる - Qiita](https://qiita.com/kmagai/items/6b4bfe3fddb00769aec4)
 
 +++
 #### 前回のコミット時点に戻りたい
@@ -89,6 +104,8 @@ $ git reset --hard HEAD
 $ git reset --hard [commit hash]
 ```
 
+<br>
+
 ```
 $ git checkout [commit hash]
 ```
@@ -101,20 +118,18 @@ $ git checkout [commit hash]
 ### Keyboard shortcut
 
 ![Keyboard Shortcut](https://github.com/djmonta/gitpitch/raw/master/public/images/keyboard-shortcut.png)
-<br>
-↓
 
 +++
 #### Code browsing
-`t` : ファイル検索
-`l` : 行に飛ぶ
+`t` : ファイル検索<br>
+`l` : 行に飛ぶ<br>
 
 +++
 #### Repository
-`g``c` : Code
-`g``i` : Issues
-`g``p` : Pull Requests
-`g``w` : Wiki
+`g` `c` : Code<br>
+`g` `i` : Issues<br>
+`g` `p` : Pull Requests<br>
+`g` `w` : Wiki<br>
 
 ---
 
@@ -127,7 +142,7 @@ $ hub clone tiimgreen/toc
 
 ↓
 <br>
-<span style="color:gray; font-size:0.6em;">[github/hub: hub helps you win at git.](https://github.com/github/hub)</span>
+For Details : [github/hub: hub helps you win at git.](https://github.com/github/hub)
 
 +++
 #### Installation
