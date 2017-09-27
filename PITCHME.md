@@ -139,7 +139,7 @@ $ git checkout [commit hash]
 ---
 
 ## Github Tips 2
-### <span style="color: #e49436">`hub` コマンド</span>
+### <span style="color: #e49436">`hub`</span> コマンド
 
 ```
 $ hub clone tiimgreen/toc
