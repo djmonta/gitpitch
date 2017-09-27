@@ -27,8 +27,7 @@ No more <span style="color: #666666">Powerpoint.</span>
 
 ---
 
-![POST Office Method](https://github.com/djmonta/gitpitch/raw/master/public/images/posts-method.png)
-
+![POST Office Method](https://github.com/djmonta/gitpitch/raw/master/public/images/posts-method.png)<br>
 <span style="color:gray; font-size:0.45em;">参考: [デザイナーがこうやってGit覚えて大好きになったよ♡ - Qiita](https://qiita.com/yunico-jp/items/87bdd13971e82833f6bb)</span>
 
 ---
