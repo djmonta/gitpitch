@@ -13,7 +13,7 @@ For Details [\[ GitPitch \] gitpitch/gitpitch/master](https://gitpitch.com/gitpi
 ---
 
 ### Git is a version control system.
-![POST Office Method]()
+![POST Office Method](https://github.com/djmonta/gitpitch/raw/master/public/images/posts-method.png)
 
 ---
 
