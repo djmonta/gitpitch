@@ -133,6 +133,7 @@ $ git checkout [commit hash]
 +++
 #### Blame とは？
 ![Blame](https://github.com/djmonta/gitpitch/raw/master/public/images/blame.png)
+<br>
 <span style="color:gray; font-size:0.5em;">行毎の変更が見られる。</span><br>
 <span style="color:gray; font-size:0.45em;">[instaprint/config/autoload/global.php at develop · inforich-inc/instaprint](https://github.com/inforich-inc/instaprint/blame/develop/config/autoload/global.php)</span>
 +++
