@@ -128,7 +128,13 @@ $ git checkout [commit hash]
 #### Code browsing
 - `t` : ファイル検索
 - `l` : 行に飛ぶ
+- `b` : Blame を見る
 
++++
+#### Blame とは？
+![Blame](https://github.com/djmonta/gitpitch/raw/master/public/images/posts-method.png)
+<span style="color:gray; font-size:0.5em;">行毎の変更が見られる。</span><br>
+<span style="color:gray; font-size:0.45em;">[instaprint/config/autoload/global.php at develop · inforich-inc/instaprint](https://github.com/inforich-inc/instaprint/blame/develop/config/autoload/global.php)</span>
 +++
 #### Repository
 - `g` `c` : Code
