@@ -1,174 +1,55 @@
-# Tips for<br><span style="color: #e49436">Git</span> and <span style="color: #e49436">Github</span>
----
-
-<span style="font-size:0.45em;">このスライドは `GitPitch` というアプリケーションで動いています</span><br>
-GitPitch turns <span style="color: #e49436; text-transform: none">PITCHME.md</span> into interactive, online slideshows.
-<br>
-<span style="color:gray; font-size:0.45em;">[ JUST LIKE THIS ONE ]</span><br>
-No more <span style="color: #666666">Keynote.<br>
-No more <span style="color: #666666">Powerpoint.</span>
-</p>
-
-----
-
-### Just <span style="color: #e49436">Markdown</span>. Then <span style="color: #e49436">Git-Commit</span>.
-<span style="color:gray; font-size:0.45em;">For Details : [\[ GitPitch \]](https://gitpitch.com/gitpitch/gitpitch)</span>
+# <span style="color:#e49436">Google App Script</span> & <span style="color:#e49436">LINE bot</span>
+<span style="font-size:0.8rem">〜簡単なサンプルを添えて</span>
 
 ---
 
-<span style="font-size:0.75em">本題に入ります</span>
+## LINE Notify & LINE Login
+[LINE Developers](https://developers.line.me/ja/)
 
 ---
 
-### <span style="color: #e49436">Git</span> is a version control system.
-<br>
-有名な郵便局メソッドで概要を理解<br>
-<span style="color:gray; font-size:0.45em;">Understanding concepts by "POST office method".</span>
+### LINE Login
+iOS, Android, Webアプリに組み込める
+Facebookログインとか同じような仕組みはよく使われているので、ユーザーには馴染みやすい
 
 ---
 
-![POST Office Method](https://github.com/djmonta/gitpitch/raw/master/public/images/posts-method.png)<br>
-<span style="color:gray; font-size:0.45em;">参考: [デザイナーがこうやってGit覚えて大好きになったよ♡ - Qiita](https://qiita.com/yunico-jp/items/87bdd13971e82833f6bb)</span>
+### Line Notify
+
+[LINE Notify](https://notify-bot.line.me/ja/)
+サービスを登録すれば通知を送ることができる。<br>
+Githubとの連携も簡単。私はIFTTTから使っていた
 
 ---
 
-## Git Tips 1
-### <span style="color: #e49436">git stash</span>
-あるある事例:<br>
-ローカルでコミットしていない差分があり、 `Pull` でエラーが起きて出来ない<br>
-↓
-
-+++
-#### 保存
-
-```
-$ git stash save
-```
-
-+++
-#### リスト
-
-```
-$ git stash list
-```
-
-#### 変更の内容も見る
-
-```
-$ git stash list -p
-```
-
-+++
-#### 適用
-
-```
-$ git stash apply stash@{0}
-```
-
-<span style="color:gray; font-size:0.45em;">`stash@{0}` には、 `stash list` で先頭に出てくる値を入れる</span><br>
-
-#### 適用と同時にstashを削除
-
-```
-$ git stash pop stash@{0}
-```
+## Google App Script
+Javascriptで記述
+Google Spreadsheetに記録したり、Gmailからメール送信したり、Googleの他サービスとの連携が簡単。
+トリガーを指定して関数呼び出しを設定できる
 
 +++
 
-<span style="color:gray; font-size:0.45em;">参考: [変更を一時的に退避！キメろgit stash - Qiita](https://qiita.com/fukajun/items/41288806e4733cb9c342)</span>
+### Google Spreadsheet
+
+```
+=IMPORTXML("https://en.wikipedia.org/wiki/Moon_landing", "//a/@href")
+```
+
+XPathを指定して、Webページの一部をスプレッドシートに挿入できる<br>
+自動更新で、最低1日1回は更新される。どうやらWebサイトが更新されたら、わりと早めに反映される (実感)<br>
+他にも、 `IMPORTHTML` や `IMAGE(url)` などの関数がある
 
 ---
 
-## Git Tips 2
-### <span style="color: #e49436">git reset</span>
-あるある事例:<br>
-変更前の状態に戻したい、動作確認したい<br>
-↓
+## たとえば
 
-+++
-#### 前回のコミット時点に戻りたい
-
-```
-$ git reset --hard HEAD
-```
-
-<span style="color:gray; font-size:0.45em;">`--hard` オプションは、コミットしていない変更があっても無視<br>
-保存しておきたい場合は、 `stash` か `checkout -b [branch name]`</span>
-
-+++
-#### あるコミット時点の動作確認をしたい
-
-```
-$ git reset --hard [commit hash]
-```
-
-<br>
-
-#### あるコミット時点でブランチを切る
-
-```
-$ git checkout [commit hash]
-```
-
-<span style="color:gray; font-size:0.45em;">こちらの方が、より安全。</span>
+Google Spreadsheet & LINE Messaging API (developer) で毎日Webサイトの情報を配信するとか<br>
+LINE botからボタンポチポチで勤怠管理とか [HATARA CLOCK](http://tech-portfolio.org/)
 
 +++
 
-<span style="color:gray; font-size:0.45em;">参考: [git reset についてもまとめてみる - murankの日記](http://d.hatena.ne.jp/murank/20110327/1301224770)<br>
-参考: [git resetでどのオプション(hard, mixed, soft)を指定すべきか、シチュエーション別に分けてみる - Qiita](https://qiita.com/kmagai/items/6b4bfe3fddb00769aec4)</span>
+## 参考に
 
----
-
-## Github Tips 1
-### <span style="color: #e49436">Keyboard shortcut</span>
-
-![Keyboard Shortcut](https://github.com/djmonta/gitpitch/raw/master/public/images/keyboard-shortcut.png)
-
-+++
-#### Code browsing
-- `t` : ファイル検索
-- `l` : 行に飛ぶ
-- `b` : Blame を見る
-
-+++
-#### Blame とは？
-<span style="color:gray; font-size:0.5em;">行毎の変更が見られる。</span><br>
-<span style="color:gray; font-size:0.45em;">[instaprint/config/autoload/global.php at develop · inforich-inc/instaprint](https://github.com/inforich-inc/instaprint/blame/develop/config/autoload/global.php)</span><br>
-![Blame](https://github.com/djmonta/gitpitch/raw/master/public/images/blame.png)
-
-+++
-#### Repository
-- `g` `c` : Code
-- `g` `i` : Issues
-- `g` `p` : Pull Requests
-- `g` `w` : Wiki
-
----
-
-## Github Tips 2
-### <span style="color: #e49436">`hub`</span> コマンド
-
-```
-$ hub clone tiimgreen/toc
-```
-
-↓
-
-+++
-#### Installation
-
-```
-$ brew install hub
-```
-
-+++
-
-<span style="color:gray; font-size:0.45em;">For Details : [github/hub: hub helps you win at git.](https://github.com/github/hub)</span>
-
----
-
-## Thank you!
-![We are gonna great team](https://media.giphy.com/media/g4NuKdLuh0roQ/giphy.gif)
-
-<span style="color:gray; font-size:0.45em;">参考: [github-cheat-sheet/README.ja.md at master · tiimgreen/github-cheat-sheet](https://github.com/tiimgreen/github-cheat-sheet/blob/master/README.ja.md)</span>
-
+- [Google Apps Scriptを使い日々のコピペ作業から解放できた話 - Qiita](https://qiita.com/moonstruckdrops@github/items/d791bc7f0b7a2c2e6b5d)
+- [SpreadSheetでスクレイピング。Importxml他、便利な関数9+1 - Qiita](https://qiita.com/ktmg/items/d53440c913e20f8bb34c)
+- [Treasure DataとGoogleスプレッドシートで作るお手軽KPIダッシュボード - Qiita](https://qiita.com/highwide/items/9a75428e8e8bda0325db)
