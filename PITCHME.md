@@ -31,9 +31,7 @@ Google Spreadsheetに記録したり、Gmailからメール送信したり、Goo
 
 ### Google Spreadsheet
 
-```
-=IMPORTXML("https://en.wikipedia.org/wiki/Moon_landing", "//a/@href")
-```
+`=IMPORTXML("https://en.wikipedia.org/wiki/Moon_landing", "//a/@href")`
 
 XPathを指定して、Webページの一部をスプレッドシートに挿入できる<br>
 自動更新で、最低1日1回は更新される。どうやらWebサイトが更新されたら、わりと早めに反映される (実感)<br>
