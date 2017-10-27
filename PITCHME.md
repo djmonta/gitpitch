@@ -23,8 +23,8 @@ Githubとの連携も簡単。私はIFTTTから使っていた
 ---
 
 ## Google App Script
-Javascriptで記述
-Google Spreadsheetに記録したり、Gmailからメール送信したり、Googleの他サービスとの連携が簡単。
+Javascriptで記述<br>
+Google Spreadsheetに記録したり、Gmailからメール送信したり、Googleの他サービスとの連携が簡単。<br>
 トリガーを指定して関数呼び出しを設定できる
 
 +++
