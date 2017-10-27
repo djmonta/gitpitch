@@ -1,5 +1,5 @@
 # <span style="color:#e49436">Google App Script</span> & <span style="color:#e49436">LINE bot</span>
-<span style="font-size:0.8rem">〜簡単なサンプルを添えて</span>
+<span style="font-size:0.9rem">〜簡単なサンプルを添えて〜</span>
 
 ---
 
