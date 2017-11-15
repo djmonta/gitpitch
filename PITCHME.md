@@ -1,100 +1,53 @@
-@title[Introduction]
-
-# Git<span class="gold">Pitch</span>
-
-#### Markdown Presentations For Everyone on Git.*
-<br>
-<br>
-<span class="byline">[ GitHub, GitLab, Bitbucket, GitBucket, Gitea, Gogs ]</span>
+# <span style="color:#e49436">Google App Script</span> & <span style="color:#e49436">LINE bot</span>
+<span style="font-size:0.9rem">〜簡単なサンプルを添えて〜</span>
 
 ---
 
-@title[PITCHME.md]
-
-#### GitPitch turns <span class="gold">PITCHME.md</span> into
-#### interactive,
-#### online and offline slideshows.
-<br>
-<span class="aside">Just like this one...</span>
+## LINE Notify & LINE Login
+[LINE Developers](https://developers.line.me/ja/)
 
 ---
 
-#### No more <span class="gray">Keynote</span>.
-#### No more <span class="gray">Powerpoint</span>.
-<br>
-#### Just <span class="gold">Markdown</span>.
-#### Then <span class="gold">Git-Commit</span>.
+### LINE Login
+iOS, Android, Webアプリに組み込める
+Facebookログインとか同じような仕組みはよく使われているので、ユーザーには馴染みやすい
 
 ---
 
-@title[Step 1. PITCHME.md]
+### Line Notify
 
-### <span class="gold">STEP 1. Create 'PITCHME.md'</span>
-<br>
-#### Create GitPitch slideshow content using GitHub Flavored Markdown in your favorite editor.
-<br>
-<span class="aside">It's as easy as README.md with simple slide-delimeters (---)</span>
+[LINE Notify](https://notify-bot.line.me/ja/)
+サービスを登録すれば通知を送ることができる。<br>
+Githubとの連携も簡単。私はIFTTTから使っていた
 
 ---
 
-@title[Step 2. Git-Commit]
+## Google App Script
+Javascriptで記述<br>
+Google Spreadsheetに記録したり、Gmailからメール送信したり、Googleの他サービスとの連携が簡単。<br>
+トリガーを指定して関数呼び出しを設定できる
 
-### <span class="gold">STEP 2. GIT-COMMIT</span>
-<br>
++++
 
-```shell
-$ git add PITCHME.md
-$ git commit -m "New slideshow content."
-$ git push
+### Google Spreadsheet
 
-Done!
-```
+`=IMPORTXML("https://en.wikipedia.org/wiki/Moon_landing", "//a/@href")`
 
-@[1](Add your PITCHME.md slideshow content file.)
-@[2](Commit PITCHME.md to your local repo.)
-@[3](Push PITCHME.md to your public repo and you're done!)
-@[5](Supports GitHub, GitLab, Bitbucket, GitBucket, Gitea, and Gogs.)
+XPathを指定して、Webページの一部をスプレッドシートに挿入できる<br>
+自動更新で、最低1日1回は更新される。どうやらWebサイトが更新されたら、わりと早めに反映される (実感)<br>
+他にも、 `IMPORTHTML` や `IMAGE(url)` などの関数がある
 
 ---
 
-@title[Step 3. Done!]
+## たとえば
 
-### <span class="gold">STEP 3. GET THE WORD OUT!</span>
-<br>
-![GitPitch Slideshow URLs](assets/images/gp-slideshow-urls.png)
-<br>
-<br>
-#### Instantly use your GitPitch slideshow URL to promote, pitch or present absolutely anything.
+Google Spreadsheet & LINE Messaging API (developer) で毎日Webサイトの情報を配信するとか<br>
+LINE botからボタンポチポチで勤怠管理とか [HATARA CLOCK](http://tech-portfolio.org/)
 
----
++++
 
-@title[Slide Rich]
+## 参考に
 
-### <span class="gold">Slide Rich</span>
-
-#### Code Presenting for Blocks, Files, and GISTs
-#### Image, Video, Chart, and Math Slides
-#### Multiple Themes with Easy Customization
-<br>
-#### <span class="gold">Plus collaboration is built-in...</span>
-#### Your Slideshow is Part of Your Project
-#### Under Git Version Control within Your Git Repo
-
----
-
-@title[Feature Rich]
-
-### <span class="gold">Feature Rich</span>
-
-#### Present Online or Offline
-#### With Speaker Notes Support
-#### Print Presentation as PDF
-#### Auto-Generated Table-of-Contents
-#### Share Presentation on Twitter or LinkedIn
-
----
-
-### Go for it.
-### Just add <span class="gold">PITCHME.md</span> ;)
-<br>
-[Click here to learn more...](https://github.com/gitpitch/gitpitch/wiki)
+- [Google Apps Scriptを使い日々のコピペ作業から解放できた話 - Qiita](https://qiita.com/moonstruckdrops@github/items/d791bc7f0b7a2c2e6b5d)
+- [SpreadSheetでスクレイピング。Importxml他、便利な関数9+1 - Qiita](https://qiita.com/ktmg/items/d53440c913e20f8bb34c)
+- [Treasure DataとGoogleスプレッドシートで作るお手軽KPIダッシュボード - Qiita](https://qiita.com/highwide/items/9a75428e8e8bda0325db)
