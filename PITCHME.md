@@ -34,18 +34,18 @@
 ---
 ## ※1:レイテンシ
 リクエストが送信されてからレスポンスが返るまでの、通信の遅延時間<br>
-[レイテンシとは (latency)： - IT用語辞典バイナリ](http://www.sophia-it.com/content/%E3%83%AC%E3%82%A4%E3%83%86%E3%83%B3%E3%82%B7)
+[レイテンシとは (latency)](http://www.sophia-it.com/content/%E3%83%AC%E3%82%A4%E3%83%86%E3%83%B3%E3%82%B7)
 
 ---
 ### HTTP1.1は多重性がない
-1RTT(※2)あたり1リクエスト/レスポンスしか送受信できない<br>
+<span style="color:gray; font-size:0.6em;">1RTT(※2)あたり1リクエスト/レスポンスしか受信できない</span>
 - 緩和策: 複数のTCP接続を使う
-	- 同時6本が一般的 1RTTあたり6リクエスト
+	- 同時6本が一般的
+	- 1RTTあたり6リクエスト
 ![image](assets/images/20171123_072657.png)
 
 ---
-## ※2:RTT
-ラウンドトリップタイム
+## ※2:RTT ラウンドトリップタイム
 - リクエストしてからレスポンスが返るまでの時間
 - レイテンシの大きさを表す値
 
@@ -55,11 +55,11 @@
 ### HTTP1.1でどうやって<br>Webサイトを速く表示させるか?
 - 昔はCSSスプライトとか
 - リクエストを減らすためにファイルを統合したり (minify)
-- ホスト名を変えたりとか　(`a.picspot.asia` と `b.picspot.asia` に分散させるとか)
+- ホスト名を変えたりとか <span style="color:gray; font-size:0.45em;">(`a.picspot.asia` と `b.picspot.asia` に分散させるとか)</span>
 
 ---
 ### HTTP/1.1パイプラインの問題
-仕様上、レスポンス受信前に次のリクエストを送信可能
+<span style="color:gray; font-size:0.6em;">仕様上、レスポンス受信前に次のリクエストを送信可能</span>
 - 切断時に、レスポンス未受信のリクエストを再送信していいかわからない
 	- サーバーが同じリクエストを複数回処理する可能性
 - 先行リクエストの処理に時間がかかると後続が詰まる (head-of-line blocking)
@@ -68,8 +68,8 @@
 ↓
 +++
 
-そうなると1RTT毎のレイテンシが通信速度に重くのしかかる<br>
--> そのために開発されたのが **HTTP/2** ！！！
+そうなると1RTT毎のレイテンシが<br>通信速度に重くのしかかる<br>
+問題解決に開発されたのが **HTTP/2** ！！！
 
 ---
 ## HTTP/2とは
@@ -81,12 +81,13 @@
 ---
 ### バイナリプロトコル
 - 脆弱性を防ぐ
-	- HTTP Response Splitting Attack レスポンス分割攻撃
-		- [HTTP レスポンス分割攻撃](http://www.asahi-net.or.jp/~wv7y-kmr/memo/php_security.html#HTTPResponseSplitting)
-		- ヘッダー内に外部入力を使用すると、ヘッダーを改竄できる脆弱性
+	- HTTP Response Splitting Attack [HTTP レスポンス分割攻撃](http://www.asahi-net.or.jp/~wv7y-kmr/memo/php_security.html#HTTPResponseSplitting)<br>
+ヘッダー内に外部入力を使用すると、ヘッダーを改竄できる脆弱性
 - 転送データ量の低減
-	- <span style="color:gray; font-size:0.45em;">転送単位を小さくする レスポンス順序変更</span>
-	- <span style="color:gray; font-size:0.45em;">ヘッダーは圧縮されてバイナリになる</span>
+<span style="color:gray; font-size:0.45em;">
+	- 転送単位を小さくして、レスポンス順序変更したい
+	- ヘッダーは圧縮されてバイナリになる
+</span>
 - 全てのデータは「フレーム」に分解して送受信
 
 ---
@@ -143,13 +144,13 @@ HTTP/2では、50%〜95%圧縮できる
 ## http2-explained
 - [http2 explained - The HTTP/2 book](https://daniel.haxx.se/http2/)
 
-<span style="color:gray; font-size:0.45em;">この http2-explained の中に仕様策定背景が少しだけ語られており、プロダクト開発にも通じる言葉が心に響きました</span>
+<span style="color:gray; font-size:0.45em;">この http2-explained の中に仕様策定背景が少しだけ語られており、プロダクト開発にも通じる言葉が心に響いた</span>
 
 ---
 ## あと
 - サーバーの実装方法もGithubにたくさんある、GoやC++での実装が多い印象
 - ブラウザ・サーバー設定・アプリケーション側の対応方法もサンプルたくさん
 
-<span style="color:gray; font-size:0.45em;">RFC 7540 は、2015年5月15日に発行されました<br>
-技術キャッチアップしよう…</span>
+<span style="color:gray; font-size:0.45em;">HTTP/2仕様(RFC 7540) は、2015年5月15日に発行されました<br>
+技術キャッチアップしよう</span>
 
