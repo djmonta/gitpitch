@@ -12,25 +12,24 @@
 
 # HTTP2の基本
 ## 登場背景
-- 転送データは増大中
+### 転送データは増大中
 ![image](assets/images/chart.png)
 
 +++
-- エンドユーザーの通信速度は上昇
-エンドユーザのバンド幅は年率50%で増加（ニールセン の法則）
+### エンドユーザーの通信速度は上昇
+エンドユーザのバンド幅は年率50%で増加（ニールセン の法則）<br>
 ![image](assets/images/nielsen-law-internet-speed-trend-curve.png)
 
 +++
-- だがページロード速度はそれに比例しない
-1.6Mbpsで頭打ち
+### だがページロード速度はそれに比例しない
+1.6Mbpsで頭打ち<br>
 ![image](assets/images/latency-per-bandwidth.png)
 
 +++
-- ページロードはレイテンシ(※1)が小さいほど速い
+### ページロードはレイテンシ(※1)が小さいほど速い
 ![image](assets/images/loadtime-latency.png)
 
 +++
-
 ## ※1:レイテンシ
 - リクエストが実施に送信されるまでの遅延時間　
 -> [用語:レイテンシ](http://www.idcf.jp/words/latency.html)
@@ -53,9 +52,7 @@
 +++
 ## ※2:RTT
 ラウンドトリップタイム
-
 - リクエストしてからレスポンスが返るまで
-
 ![ラウンドトリップタイム](http://pds.exblog.jp/pds/1/201108/29/63/e0091163_22465544.jpg)
 
 ---
