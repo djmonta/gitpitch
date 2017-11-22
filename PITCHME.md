@@ -12,6 +12,8 @@
 
 # HTTP2の基本
 ## 登場背景
+
+---
 ### 転送データは増大中
 ![image](assets/images/chart.png)
 
