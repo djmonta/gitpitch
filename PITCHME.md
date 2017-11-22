@@ -17,45 +17,44 @@
 ### 転送データは増大中
 ![image](assets/images/chart.png)
 
-+++
+---
 ### エンドユーザーの通信速度は上昇
-エンドユーザのバンド幅は年率50%で増加（ニールセン の法則）<br>
+エンドユーザのバンド幅は年率50%で増加<br>（ニールセンの法則）<br>
 ![image](assets/images/nielsen-law-internet-speed-trend-curve.png)
 
-+++
+---
 ### だがページロード速度は<br>通信速度に比例しない
 1.6Mbpsで頭打ち<br>
 ![image](assets/images/latency-per-bandwidth.png)
 
-+++
+---
 ### ページロードはレイテンシ(※1)が<br>小さいほど速い
 ![image](assets/images/loadtime-latency.png)
 
-+++
+---
 ## ※1:レイテンシ
 - リクエストが実施に送信されるまでの遅延時間　
 -> [用語:レイテンシ](http://www.idcf.jp/words/latency.html)
 
 ---
-
 ## なぜHTTP/2か
-### HTTP1.1は多重性がない
+**HTTP1.1は多重性がない**
 1RTT(※2)あたり1リクエスト/レスポンスだけ<br>
-緩和策は複数のTCP接続を使う
-- 1RTTあたり一般的に6リクエストの制限
+緩和策は複数のTCP接続を使う<br>
+-> 1RTTあたり一般的に6リクエストの制限
 
-+++
+---
 ### **今までどうやってWebサイトを速く表示させてたの?**
 - 昔はCSSスプライトとか
 - リクエストを減らすためにファイルを統合したり (minify)
-- ホスト名を変えたりとか　(`a.picspot.asia` と `b.picspot.asia` に分散させる)
+- ホスト名を変えたりとか　(`a.picspot.asia` と `b.picspot.asia` に分散させるとか)
 
-+++
+---
 ### 多重性がないために複数のリクエストを必要とする
 そうなると1RTT毎のレイテンシが通信速度に重くのしかかる<br>
--> そのために開発されたのがHTTP/2！！！
+-> そのために開発されたのが **HTTP/2** ！！！
 
-+++
+---
 ## ※2:RTT
 ラウンドトリップタイム
 - リクエストしてからレスポンスが返るまで
@@ -119,16 +118,13 @@
 - [で、 HTTP2.0 対応って何をすればいいの？](http://dskst9.hatenablog.com/entry/2016/01/30/235019)
 - [HTTPとサーバ技術の最新動向](https://www.slideshare.net/kazuho/http-58452175)
 
-+++
-
-### ここだけ読んだ方が分かりやすい
+---
 - [bagder/http2-explained: A detailed document explaining and documenting HTTP/2, the successor to the widely popular HTTP/1.1 protocol](https://github.com/bagder/http2-explained)
 - [http2 explained - The HTTP/2 book](https://daniel.haxx.se/http2/)
 
 http2-explained の中に背景が少しだけ語られており、プロダクト開発にも通じる言葉が心に響きました。
 
-+++
-
+---
 ## あと
 - サーバーの実装方法もGithubにたくさんある、GolangやC++が多い印象
 - 既存のブラウザ・サーバー設定・アプリケーション側の対応方法もGithubにサンプルある
