@@ -33,24 +33,26 @@
 
 ---
 ## ※1:レイテンシ
-リクエストが実施に送信されるまでの遅延時間<br>
--> [用語:レイテンシ](http://www.idcf.jp/words/latency.html)
+リクエストが送信されてからレスポンスが返るまでの、通信の遅延時間<br>
+[レイテンシとは (latency)： - IT用語辞典バイナリ](http://www.sophia-it.com/content/%E3%83%AC%E3%82%A4%E3%83%86%E3%83%B3%E3%82%B7)
 
 ---
-### **HTTP1.1は多重性がない**
+### HTTP1.1は多重性がない
 1RTT(※2)あたり1リクエスト/レスポンスしか送受信できない<br>
-緩和策: 複数のTCP接続を使う<br>
-- 同時6本が一般的 1RTTあたり6リクエスト
+- 緩和策: 複数のTCP接続を使う
+	- 同時6本が一般的 1RTTあたり6リクエスト
+![image](assets/images/20171123_072657.png)
 
 ---
 ## ※2:RTT
 ラウンドトリップタイム
-- リクエストしてからレスポンスが返るまで
+- リクエストしてからレスポンスが返るまでの時間
 - レイテンシの大きさを表す値
+
 ![ラウンドトリップタイム](http://pds.exblog.jp/pds/1/201108/29/63/e0091163_22465544.jpg)
 
 ---
-### **どうやってWebサイトを速く表示させるか? HTTP1.1で**
+### HTTP1.1でどうやって<br>Webサイトを速く表示させるか?
 - 昔はCSSスプライトとか
 - リクエストを減らすためにファイルを統合したり (minify)
 - ホスト名を変えたりとか　(`a.picspot.asia` と `b.picspot.asia` に分散させるとか)
@@ -58,10 +60,13 @@
 ---
 ### HTTP/1.1パイプラインの問題
 仕様上、レスポンス受信前に次のリクエストを送信可能
-⁃ 切断時に、レスポンス未受信のリクエストを再送信していいかわからない
+- 切断時に、レスポンス未受信のリクエストを再送信していいかわからない
 	- サーバーが同じリクエストを複数回処理する可能性
-⁃ 先行リクエストの処理に時間がかかると後続が詰まる (head-of-line blocking)
-⁃ バグのあるサーバー実装が多い
+- 先行リクエストの処理に時間がかかると後続が詰まる (head-of-line blocking)
+- バグのあるサーバー実装が多い
+
+↓
++++
 
 そうなると1RTT毎のレイテンシが通信速度に重くのしかかる<br>
 -> そのために開発されたのが **HTTP/2** ！！！
@@ -74,32 +79,40 @@
 - ヘッダ圧縮
 
 ---
-#### バイナリプロトコル
+### バイナリプロトコル
 - 脆弱性を防ぐ
-	- HTTP Response Splitting Attack
-	- レスポンス分割攻撃
+	- HTTP Response Splitting Attack レスポンス分割攻撃
 		- [HTTP レスポンス分割攻撃](http://www.asahi-net.or.jp/~wv7y-kmr/memo/php_security.html#HTTPResponseSplitting)
+		- ヘッダー内に外部入力を使用すると、ヘッダーを改竄できる脆弱性
 - 転送データ量の低減
+	- <span style="color:gray; font-size:0.45em;">転送単位を小さくする レスポンス順序変更</span>
+	- <span style="color:gray; font-size:0.45em;">ヘッダーは圧縮されてバイナリになる</span>
 - 全てのデータは「フレーム」に分解して送受信
 
 ---
-#### 多重化
+### 多重化
 - 同時に100以上のリクエストを送信可能
 - 任意のタイミングでリクエスト送信可能
 - レスポンスの順序に制限なし
 - レスポンスを織り交ぜ可能
   - DATAのstream IDを見よ
 
----
-#### ヘッダ圧縮
-HTTP/1.1のヘッダは大きい
-- リクエストで最低でも300バイト程度
-- レスポンスで通常300バイト程度
-- 100個レスポンスを受け取るなら、それだけで30KB
-つまり100回通信するとヘッダだけで60kb
+↓
++++
+![image](assets/images/20171123_073755.png)
 
 ---
-### HTTP/1.1とHTTP/2のやり取り簡易比較図
+### ヘッダ圧縮
+HTTP/1.1のヘッダは大きい
+- リクエスト: 最低でも300バイト程度
+- レスポンス: 通常300バイト程度
+	100個レスポンスを受け取るなら、それだけで30KB
+
+つまり100回通信するとヘッダだけで60kb<br>
+HTTP/2では、50%〜95%圧縮できる
+
+---
+### HTTP/1.1とHTTP/2のTCPコネクション<br>簡易比較図
 ![1.1と2.0](https://qiita-image-store.s3.amazonaws.com/0/62386/6217ebd8-9dea-7640-24d2-115b2cafdaec.png)
 
 ---
@@ -111,19 +124,17 @@ HTTP/1.1のヘッダは大きい
 ---
 ## サーバプッシュ
 - HTTP/2はRTTを隠蔽する技術
-- でも最低1RTTはいるよね？？
-	- 実は0RTTにすることができる
-- それが「サーバプッシュ」
-	- サーバがクライアントの発行するリクエストを予測してレスポンスをプッシュ
+- でも最低1RTTはいるよね?? <br> -> 実は0RTTにすることができる
+- それが「サーバプッシュ」<br> サーバがクライアントの発行するリクエストを予測してレスポンスをプッシュ
 
-<br>↓
+↓
 
 +++
 
 ![サーバプッシュ](http://i.yimg.jp/images/tecblog/2014-1H/http2/http2_server_push.png)
 
 ---
-## 参考サイト
+## 参考
 - [なぜ、我々はHTTP/2に対応する必要があるのか？](http://www.seojapan.com/blog/everyone-moving-http2)
 - [で、 HTTP2.0 対応って何をすればいいの？](http://dskst9.hatenablog.com/entry/2016/01/30/235019)
 - [HTTPとサーバ技術の最新動向](https://www.slideshare.net/kazuho/http-58452175)
@@ -132,10 +143,13 @@ HTTP/1.1のヘッダは大きい
 - [bagder/http2-explained: A detailed document explaining and documenting HTTP/2, the successor to the widely popular HTTP/1.1 protocol](https://github.com/bagder/http2-explained)
 - [http2 explained - The HTTP/2 book](https://daniel.haxx.se/http2/)
 
-http2-explained の中に背景が少しだけ語られており、プロダクト開発にも通じる言葉が心に響きました。
+<span style="color:gray; font-size:0.45em;">http2-explained の中に背景が少しだけ語られており、プロダクト開発にも通じる言葉が心に響きました</span>
 
 ---
 ## あと
-- サーバーの実装方法もGithubにたくさんある、GolangやC++が多い印象
-- 既存のブラウザ・サーバー設定・アプリケーション側の対応方法もGithubにサンプルある
+- サーバーの実装方法もGithubにたくさんある、GoやC++での実装が多い印象
+- ブラウザ・サーバー設定・アプリケーション側の対応方法もサンプルたくさん
+
+<span style="color:gray; font-size:0.45em;">RFC 7540 は、2015年5月15日に発行されました<br>
+技術キャッチアップしよう…</span>
 
