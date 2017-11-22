@@ -16,44 +16,37 @@
 ---
 ### 転送データは増大中
 ![image](assets/images/chart.png)
-
 ---
 ### エンドユーザーの通信速度は上昇
 エンドユーザのバンド幅は年率50%で増加<br>（ニールセンの法則）<br>
 ![image](assets/images/nielsen-law-internet-speed-trend-curve.png)
-
 ---
 ### だがページロード速度は<br>通信速度に比例しない
 1.6Mbpsで頭打ち<br>
 ![image](assets/images/latency-per-bandwidth.png)
-
 ---
 ### ページロードはレイテンシ(※1)が<br>小さいほど速い
 ![image](assets/images/loadtime-latency.png)
-
 ---
 ## ※1:レイテンシ
 リクエストが送信されてからレスポンスが返るまでの、通信の遅延時間<br>
 [レイテンシとは (latency)](http://www.sophia-it.com/content/%E3%83%AC%E3%82%A4%E3%83%86%E3%83%B3%E3%82%B7)
 
 ---
-### HTTP1.1は多重性がない
+### HTTP/1.1は多重性がない
 <span style="color:gray; font-size:0.6em;">1RTT(※2)あたり1リクエスト/レスポンスしか受信できない</span>
 - 緩和策: 複数のTCP接続を使う
 	- 同時6本までが一般的
 
 ![image](assets/images/20171123_072657.png)
-
 ---
 ## ※2:RTT
 ラウンドトリップタイム
 - リクエストしてからレスポンスが返るまでの時間
 - レイテンシの大きさを表す値
 
-![ラウンドトリップタイム](http://pds.exblog.jp/pds/1/201108/29/63/e0091163_22465544.jpg)
-
 ---
-### HTTP1.1でどうやって<br>Webサイトを速く表示させるか?
+### HTTP/1.1でどうやって<br>Webサイトを速く表示させるか?
 - 昔はCSSスプライトとか
 - リクエストを減らすためにファイルを統合したり (minify)
 - ホスト名を変えたりとか <span style="color:gray; font-size:0.45em;">(`a.picspot.asia` と `b.picspot.asia` に分散させるとか)</span>
@@ -68,10 +61,11 @@
 
 ↓
 +++
+<span style="color:gray; font-size:0.85em;">そうなると1RTT毎のレイテンシが<br>通信速度に重くのしかかる</span>
 
-<span style="color:gray; font-size:0.45em;">そうなると1RTT毎のレイテンシが<br>通信速度に重くのしかかる</span>
-
-<p>その問題解決のために開発されたのが **HTTP/2** ！！！</p>
+<p>その問題解決のために開発されたのが<br>
+**HTTP/2**<br>
+！！！</p>
 
 ---
 ## HTTP/2とは
@@ -91,7 +85,6 @@
 	- ヘッダーは圧縮されてバイナリになる
 </span>
 - 全てのデータは「フレーム」に分解して送受信
-
 ---
 ### 多重化
 - リクエスト
@@ -103,7 +96,6 @@
 	  - DATAのstream IDを見よ
 
 ![image](assets/images/20171123_073755.png)
-
 ---
 ### ヘッダ圧縮
 HTTP/1.1のヘッダは大きい
@@ -112,7 +104,7 @@ HTTP/1.1のヘッダは大きい
 	100個レスポンスを受け取るなら、それだけで30KB
 
 つまり100回通信するとヘッダだけで60kb<br>
-HTTP/2では、50%〜95%圧縮できる
+HTTP/2では、**50%〜95%** 圧縮できる
 
 ---
 ### HTTP/1.1とHTTP/2のTCPコネクション<br>簡易比較図
@@ -131,9 +123,7 @@ HTTP/2では、50%〜95%圧縮できる
 - それが「サーバプッシュ」<br> サーバがクライアントの発行するリクエストを予測してレスポンスをプッシュ
 
 ↓
-
 +++
-
 ![サーバプッシュ](http://i.yimg.jp/images/tecblog/2014-1H/http2/http2_server_push.png)
 
 ---
