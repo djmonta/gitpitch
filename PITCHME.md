@@ -40,14 +40,14 @@
 
 ## なぜHTTP/2か
 ### HTTP1.1は多重性がない
-1RTT(※2)あたり1リクエスト/レスポンスしかできない<br>
+1RTT(※2)あたり1リクエスト/レスポンスだけ<br>
 緩和策は複数のTCP接続を使う
 - 1RTTあたり一般的に6リクエストの制限
 
 +++
 ### **今までどうやってWebサイトを速く表示させてたの?**
 - 昔はCSSスプライトとか
-- リクエストあたりのレスポンスを圧縮したり（minify)
+- リクエストを減らすためにファイルを統合したり (minify)
 - ホスト名を変えたりとか　(`a.picspot.asia` と `b.picspot.asia` に分散させる)
 
 +++
@@ -114,14 +114,14 @@
 ![サーバプッシュ](http://i.yimg.jp/images/tecblog/2014-1H/http2/http2_server_push.png)
 
 ---
-# 参考サイト
+## 参考サイト
 - [なぜ、我々はHTTP/2に対応する必要があるのか？](http://www.seojapan.com/blog/everyone-moving-http2)
 - [で、 HTTP2.0 対応って何をすればいいの？](http://dskst9.hatenablog.com/entry/2016/01/30/235019)
 - [HTTPとサーバ技術の最新動向](https://www.slideshare.net/kazuho/http-58452175)
 
 +++
 
-# ここだけ読んだ方が分かりやすい
+### ここだけ読んだ方が分かりやすい
 - [bagder/http2-explained: A detailed document explaining and documenting HTTP/2, the successor to the widely popular HTTP/1.1 protocol](https://github.com/bagder/http2-explained)
 - [http2 explained - The HTTP/2 book](https://daniel.haxx.se/http2/)
 
@@ -129,7 +129,7 @@ http2-explained の中に背景が少しだけ語られており、プロダク�
 
 +++
 
-# あと
+## あと
 - サーバーの実装方法もGithubにたくさんある、GolangやC++が多い印象
 - 既存のブラウザ・サーバー設定・アプリケーション側の対応方法もGithubにサンプルある
 
