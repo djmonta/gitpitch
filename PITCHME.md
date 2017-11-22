@@ -10,7 +10,7 @@
 
 ---
 
-# HTTP2の基本
+# HTTP/2の基本
 ## 登場背景
 
 ---
@@ -23,12 +23,12 @@
 ![image](assets/images/nielsen-law-internet-speed-trend-curve.png)
 
 +++
-### だがページロード速度はそれに比例しない
+### だがページロード速度は<br>通信速度に比例しない
 1.6Mbpsで頭打ち<br>
 ![image](assets/images/latency-per-bandwidth.png)
 
 +++
-### ページロードはレイテンシ(※1)が小さいほど速い
+### ページロードはレイテンシ(※1)が<br>小さいほど速い
 ![image](assets/images/loadtime-latency.png)
 
 +++
@@ -39,17 +39,21 @@
 ---
 
 ## なぜHTTP/2か
-- HTTP1.1は多重性がない
-	- 1RTT(※2)あたり1リクエスト/レスポンスしかできない
-	- 緩和策は複数のTCP接続を使う
-		- 1RTTあたり6リクエスト
-		- **? どうやって?**
-			- 昔はCSSスプライトとか
-			- リクエストあたりのレスポンスを圧縮したり（minify)
-			- ホスト名を変えたりとか　(`a.picspot.asia` と `b.picspot.asia` に分散させる)
-- 多重性がないために複数のリクエストを必要とする
-	- そうなると1RTT毎のレイテンシが通信速度に重くのしかかる
-- そのために開発されたのがHTTP/2！！！
+### HTTP1.1は多重性がない
+1RTT(※2)あたり1リクエスト/レスポンスしかできない<br>
+緩和策は複数のTCP接続を使う
+- 1RTTあたり一般的に6リクエストの制限
+
++++
+### **今までどうやってWebサイトを速く表示させてたの?**
+- 昔はCSSスプライトとか
+- リクエストあたりのレスポンスを圧縮したり（minify)
+- ホスト名を変えたりとか　(`a.picspot.asia` と `b.picspot.asia` に分散させる)
+
++++
+### 多重性がないために複数のリクエストを必要とする
+そうなると1RTT毎のレイテンシが通信速度に重くのしかかる<br>
+-> そのために開発されたのがHTTP/2！！！
 
 +++
 ## ※2:RTT
@@ -58,7 +62,7 @@
 ![ラウンドトリップタイム](http://pds.exblog.jp/pds/1/201108/29/63/e0091163_22465544.jpg)
 
 ---
-## HTTP2とは
+## HTTP/2とは
 ### 基本的な技術要素
 - バイナリプロトコル
 - 多重化
@@ -88,9 +92,6 @@
 	- 100回通信するとヘッダだけで60kb
 
 ---
-### HTTP2.0体感サイト
-[HTTP2.0体感サイト](https://www.symfony.fi/entry/compare-resource-loading-between-http-2-and-http-1-1)
-
 ### HTTP1.1とHTTP2.0のやり取り簡易比較図
 ![1.1と2.0](https://qiita-image-store.s3.amazonaws.com/0/62386/6217ebd8-9dea-7640-24d2-115b2cafdaec.png)
 
@@ -99,18 +100,16 @@
 - クライアントがサーバにレスポンス優先度を指定
 - サーバはその優先度を参考にレスポンスを返す順番を決める
 - 優先度指定することでユーザ体感速度を大幅に向上させることができる
-	- 初期描画を優先したレスポンスにすることによる
 
 ---
 ## サーバプッシュ
-- HTTP2はRTTを隠蔽する技術
+- HTTP/2はRTTを隠蔽する技術
 - でも最低1RTTはいるよね？？
 	- 実は0RTTにすることができる
 - それが「サーバプッシュ」
 	- サーバがクライアントの発行するリクエストを予測してレスポンスをプッシュ
-- まだ仕様の標準化はされてない
-- ブラウザ対応がまだ
-- ポテンシャルは秘めている
+
++++
 
 ![サーバプッシュ](http://i.yimg.jp/images/tecblog/2014-1H/http2/http2_server_push.png)
 
@@ -120,9 +119,15 @@
 - [で、 HTTP2.0 対応って何をすればいいの？](http://dskst9.hatenablog.com/entry/2016/01/30/235019)
 - [HTTPとサーバ技術の最新動向](https://www.slideshare.net/kazuho/http-58452175)
 
++++
+
 # ここだけ読んだ方が分かりやすい
 - [bagder/http2-explained: A detailed document explaining and documenting HTTP/2, the successor to the widely popular HTTP/1.1 protocol](https://github.com/bagder/http2-explained)
 - [http2 explained - The HTTP/2 book](https://daniel.haxx.se/http2/)
+
+http2-explained の中に背景が少しだけ語られており、プロダクト開発にも通じる言葉が心に響きました。
+
++++
 
 # あと
 - サーバーの実装方法もGithubにたくさんある、GolangやC++が多い印象
