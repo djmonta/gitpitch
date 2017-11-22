@@ -140,10 +140,10 @@ HTTP/2では、50%〜95%圧縮できる
 - [HTTPとサーバ技術の最新動向](https://www.slideshare.net/kazuho/http-58452175)
 
 ---
-- [bagder/http2-explained: A detailed document explaining and documenting HTTP/2, the successor to the widely popular HTTP/1.1 protocol](https://github.com/bagder/http2-explained)
+## http2-explained
 - [http2 explained - The HTTP/2 book](https://daniel.haxx.se/http2/)
 
-<span style="color:gray; font-size:0.45em;">http2-explained の中に背景が少しだけ語られており、プロダクト開発にも通じる言葉が心に響きました</span>
+<span style="color:gray; font-size:0.45em;">この http2-explained の中に仕様策定背景が少しだけ語られており、プロダクト開発にも通じる言葉が心に響きました</span>
 
 ---
 ## あと
