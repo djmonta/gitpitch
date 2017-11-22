@@ -63,9 +63,8 @@
 +++
 <span style="color:gray; font-size:0.85em;">そうなると1RTT毎のレイテンシが<br>通信速度に重くのしかかる</span>
 
-<p>その問題解決のために開発されたのが<br>
-**HTTP/2**<br>
-！！！</p>
+その問題解決のために開発されたのが<br>
+**HTTP/2**
 
 ---
 ## HTTP/2とは
@@ -77,14 +76,16 @@
 ---
 ### バイナリプロトコル
 - 脆弱性を防ぐ
-	- HTTP Response Splitting Attack [HTTP レスポンス分割攻撃](http://www.asahi-net.or.jp/~wv7y-kmr/memo/php_security.html#HTTPResponseSplitting)<br>
-<span style="color:gray; font-size:0.45em;">ヘッダー内に外部入力を使用すると、ヘッダーを改竄できる脆弱性</span>
+	- HTTP Response Splitting Attack<br>
+<span style="font-size:0.45em;">[HTTP レスポンス分割攻撃](http://www.asahi-net.or.jp/~wv7y-kmr/memo/php_security.html#HTTPResponseSplitting)<br>
+ヘッダー内に外部入力を使用すると、ヘッダーを改竄できる脆弱性</span>
 - 転送データ量の低減
-<span style="color:gray; font-size:0.45em;">
+<span style="color:gray; font-size:0.6em;">
 	- 転送単位を小さくして、レスポンス順序変更したい
 	- ヘッダーは圧縮されてバイナリになる
 </span>
 - 全てのデータは「フレーム」に分解して送受信
+
 ---
 ### 多重化
 - リクエスト
@@ -92,10 +93,13 @@
 	- 任意のタイミングでリクエスト送信可能
 - レスポンス
 	- レスポンスの順序に制限なし
-	- レスポンスを織り交ぜ可能
-	  - DATAのstream IDを見よ
+	- レスポンスを織り交ぜ可能<br>
+	  DATAのstream IDを見よ
 
+↓
++++
 ![image](assets/images/20171123_073755.png)
+
 ---
 ### ヘッダ圧縮
 HTTP/1.1のヘッダは大きい
