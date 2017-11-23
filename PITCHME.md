@@ -34,9 +34,10 @@
 
 ---
 ### HTTP/1.1は多重性がない
-<span style="color:gray; font-size:0.6em;">1RTT(※2)あたり1リクエスト/レスポンスしか受信できない</span>
-- 緩和策: 複数のTCP接続を使う
-	- 同時6本までが一般的
+<span style="font-size:0.7em;">1RTT(※2)あたり1リクエスト/レスポンスしか受信できない</span>
+
+- 緩和策: 複数のTCP接続を使う（制限緩和）
+	- クライアントはホスト名毎に6-8接続まで使用
 
 ![image](assets/images/20171123_072657.png)
 ---
@@ -47,24 +48,33 @@
 
 ---
 ### HTTP/1.1でどうやって<br>Webサイトを速く表示させるか?
-- 昔はCSSスプライトとか
-- リクエストを減らすためにファイルを統合したり (minify)
-- ホスト名を変えたりとか <span style="color:gray; font-size:0.45em;">(`a.picspot.asia` と `b.picspot.asia` に分散させるとか)</span>
+- CSS/JSスプライトとかインライン化とか
+- リクエストを減らすためにファイルを統合したり (コンカチネーション)
+- ホスト名を変えたりとか (シャーディング)<br>
+<span style="color:gray; font-size:0.45em;">`a.picspot.asia`, `b.picspot.asia`, `c.picspot.asia`,,,</span>
 
 ---
 ### HTTP/1.1パイプラインの問題
-<span style="color:gray; font-size:0.6em;">仕様上、レスポンス受信前に次のリクエストを送信可能</span>
+<span style="font-size:0.7em;">仕様上、レスポンス受信前に次のリクエストを送信可能</span>
 - 切断時に、レスポンス未受信のリクエストを再送信していいかわからない<br>
-<span style="color:gray; font-size:0.45em;">サーバーが同じリクエストを複数回処理する可能性</span>
+<span style="color:gray; font-size:0.45em;">サーバーが同じリクエストを複数回処理する可能性があるため</span>
 - 先行リクエストの処理に時間がかかると後続が詰まる (head-of-line blocking)
 - バグのあるサーバー実装が多い
 
 ↓
 +++
-<span style="color:gray; font-size:0.85em;">そうなると1RTT毎のレイテンシが<br>通信速度に重くのしかかる</span>
+<span style="color:gray; font-size:0.45em;">レイテンシーでwebが死ぬ</span>
 
-その問題解決のために開発されたのが<br>
+### "もうやめて、HTTP/1.1のライフはゼロよ"
+進化したプロトコル<br>
 **HTTP/2**
+
+- RTTの影響がより少ない
+- パイプライニングとヘッドオブライン・ブロッキング問題を解決する
+- ホストへの同時接続数を増やす必要性をなくす
+- 既存のインターフェースや全てのコンテンツ、URIフォーマットやスキームを変更しない
+
+<span style="color:gray; font-size:0.45em;">Google SPDYを元に仕様策定が始まった</span>
 
 ---
 ## HTTP/2とは
