@@ -61,11 +61,10 @@
 - 先行リクエストの処理に時間がかかると後続が詰まる (head-of-line blocking)
 - バグのあるサーバー実装が多い
 
+<span style="color:gray; font-size:0.45em;">レイテンシーでwebが死ぬ</span><br>
 ↓
 +++
-<span style="color:gray; font-size:0.45em;">レイテンシーでwebが死ぬ</span>
-
-### "もうやめて、HTTP/1.1のライフはゼロよ"
+### <span style="font-size:85%">"もうやめて、HTTP/1.1のライフはゼロよ"</span>
 進化したプロトコル<br>
 **HTTP/2**
 
