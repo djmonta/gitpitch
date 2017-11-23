@@ -71,7 +71,7 @@
 ![head-of-line blocking](assets/images/head-of-line-blocking.jpg)
 
 ---
-<span style="color:gray; font-size:0.45em;">レイテンシーでwebが死ぬ</span><br>
+<span style="color:gray; font-size:0.65em;">レイテンシーでwebが死ぬ</span><br>
 ### <span style="font-size:90%">"もうやめて、HTTP/1.1のライフはゼロよ"</span>
 
 ---
