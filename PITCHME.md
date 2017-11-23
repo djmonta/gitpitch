@@ -36,7 +36,7 @@
 <span style="font-size:0.7em;">1RTT(※2)あたり1リクエスト/レスポンスしか受信できない</span>
 
 - 緩和策: 複数のTCP接続を使う（制限あり）<br>
-クライアントはホスト名毎に6-8接続まで使用
+<span style="font-size:0.5em;">クライアントはホスト名毎に6-8接続まで使用</span>
 
 ![image](assets/images/20171123_072657.png)
 ![image](assets/images/20171123_072657.png)
