@@ -72,7 +72,7 @@
 
 ---
 <span style="color:gray; font-size:0.45em;">レイテンシーでwebが死ぬ</span><br>
-## <span style="font-size:85%">"もうやめて、HTTP/1.1のライフはゼロよ"</span>
+### <span style="font-size:90%">"もうやめて、HTTP/1.1のライフはゼロよ"</span>
 
 ---
 <span style="color:gray; font-size:0.45em;">進化したプロトコル</span><br>
