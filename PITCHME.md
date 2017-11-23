@@ -179,4 +179,4 @@ HTTP/2では、**50%〜5%** まで圧縮できる
 
 ---?image=assets/images/IMG_9970.JPG&size=cover
 
-<h2 style="background:rgba(255, 255, 255, 0.7); line-height:3; color:#96280A">Thank you!!</h2>
+<h2 style="background:rgba(255, 255, 255, 0.7); line-height:3; color:#148C32">Thank you!!</h2>
