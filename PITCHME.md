@@ -10,8 +10,7 @@
 
 ---
 
-# HTTP/2の基本
-## 登場背景
+## HTTP/2の登場背景
 
 ---
 ### 転送データは増大中
@@ -29,7 +28,7 @@
 ![image](assets/images/loadtime-latency.png)
 ---
 ## ※1:レイテンシ
-リクエストが送信されてからレスポンスが返るまでの、通信の遅延時間<br>
+リクエストが送信されてからレスポンスが返るまでの、**通信の遅延時間**<br>
 [レイテンシとは (latency)](http://www.sophia-it.com/content/%E3%83%AC%E3%82%A4%E3%83%86%E3%83%B3%E3%82%B7)
 
 ---
@@ -40,11 +39,12 @@
 	- クライアントはホスト名毎に6-8接続まで使用
 
 ![image](assets/images/20171123_072657.png)
+
 ---
 ## ※2:RTT
 ラウンドトリップタイム
-- リクエストしてからレスポンスが返るまでの時間
-- レイテンシの大きさを表す値
+リクエストが送信されてからレスポンスが返るまでの時間<br>
+レイテンシの大きさを表す値
 
 ---
 ### HTTP/1.1でどうやって<br>Webサイトを速く表示させるか?
@@ -68,8 +68,11 @@
 
 ↓
 +++
+![head-of-line blocking](assets/images/head-of-line-blocking.jpg)
+
+---
 <span style="color:gray; font-size:0.45em;">レイテンシーでwebが死ぬ</span><br>
-### <span style="font-size:85%">"もうやめて、HTTP/1.1のライフはゼロよ"</span>
+## <span style="font-size:85%">"もうやめて、HTTP/1.1のライフはゼロよ"</span>
 
 ---
 <span style="color:gray; font-size:0.45em;">進化したプロトコル</span><br>
