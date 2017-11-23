@@ -35,7 +35,8 @@
 ### HTTP/1.1は多重性がない
 <span style="font-size:0.7em;">1RTT(※2)あたり1リクエスト/レスポンスしか受信できない</span>
 
-緩和策: 複数のTCP接続を使う（制限あり）<br>
+緩和策: 複数のTCP接続を使う（制限あり）
+
 <span style="font-size:0.7em;">クライアントはホスト名毎に6-8接続まで使用</span>
 
 ![image](assets/images/20171123_072657.png)
@@ -113,6 +114,7 @@
 - リクエスト
 	- 同時に100以上のリクエストを送信可能
 	- 任意のタイミングでリクエスト送信可能
+
 - レスポンス
 	- レスポンスの順序に制限なし
 	- レスポンスを織り交ぜ可能<br>
@@ -144,8 +146,8 @@ HTTP/2では、**50%〜5%** まで圧縮できる
 
 ---
 ## サーバプッシュ
-<span style="font-size:0.5em;">HTTP/2はRTTを隠蔽する技術。<span style="color:gray;">でも最低1RTTはいるよね??</span></span><br>
-<span style="font-size:0.7em;">→ 0RTTにできる「サーバプッシュ」</span><br>
+<span style="font-size:0.5em;">HTTP/2はRTTを隠蔽する技術。<span style="color:gray;">でも最低1RTTはいるよね??</span><br>
+0RTTにできる「サーバプッシュ」</span><br>
 
 サーバがクライアントの発行するリクエストを<br>予測してレスポンスをプッシュ<br>
 
@@ -177,4 +179,4 @@ HTTP/2では、**50%〜5%** まで圧縮できる
 
 ---?image=assets/images/IMG_9970.JPG&size=cover
 
-<h2 style="background:rgba(255, 255, 255, 0.7); line-height:3; color:#444">Thank you!!</h2>
+<h2 style="background:rgba(255, 255, 255, 0.7); line-height:3; color:#96280A">Thank you!!</h2>
