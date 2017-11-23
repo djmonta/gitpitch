@@ -38,7 +38,7 @@
 - 緩和策: 複数のTCP接続を使う（制限緩和）
 	- クライアントはホスト名毎に6-8接続まで使用
 
-![image](assets/images/20171123_072657.png)
+![image](assets/images/20171123_072657.png)![image](assets/images/20171123_072657.png)![image](assets/images/20171123_072657.png)
 
 ---
 ## ※2:RTT
