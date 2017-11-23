@@ -73,7 +73,7 @@
 
 ---
 <span style="color:gray; font-size:0.45em;">進化したプロトコル</span><br>
-**HTTP/2**
+## HTTP/2
 
 - RTTの影響がより少ない
 - パイプライニングとヘッドオブライン・ブロッキング問題を解決する
