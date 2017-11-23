@@ -93,9 +93,9 @@
 <span style="font-size:0.45em;">HTTP Response Splitting Attack [HTTP レスポンス分割攻撃](http://www.asahi-net.or.jp/~wv7y-kmr/memo/php_security.html#HTTPResponseSplitting)<br>ヘッダー内に外部入力を使用すると、ヘッダーを改竄できる脆弱性
 </span>
 
-- 転送データ量の低減
+- 転送データ量の低減<br>
 <span style="color:gray; font-size:0.45em;">
-	- 転送単位を小さくして、レスポンス順序変更したい
+	- 転送単位を小さくして、レスポンス順序変更できるように
 	- ヘッダーは圧縮されてバイナリになる
 </span>
 
