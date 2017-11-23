@@ -48,24 +48,29 @@
 
 ---
 ### HTTP/1.1でどうやって<br>Webサイトを速く表示させるか?
-- CSS/JSスプライトとかインライン化とか
-- リクエストを減らすためにファイルを統合したり (コンカチネーション)
-- ホスト名を変えたりとか (シャーディング)<br>
-<span style="color:gray; font-size:0.45em;">`a.picspot.asia`, `b.picspot.asia`, `c.picspot.asia`,,,</span>
+- CSS/JSスプライトやインライン化
+- リクエストを減らすためにファイルを統合 (コンカチネーション)
+- ホスト名を変えたりとか (シャーディング)
+<span style="color:gray; font-size:0.45em;">
+	- `a.picspot.asia`
+	- `b.picspot.asia`
+	- `c.picspot.asia`
+	- ...
+</span>
 
 ---
 ### HTTP/1.1パイプラインの問題
 <span style="font-size:0.7em;">仕様上、レスポンス受信前に次のリクエストを送信可能</span>
 - 切断時に、レスポンス未受信のリクエストを再送信していいかわからない<br>
 <span style="color:gray; font-size:0.45em;">サーバーが同じリクエストを複数回処理する可能性があるため</span>
+
 - 先行リクエストの処理に時間がかかると後続が詰まる (head-of-line blocking)
-- バグのあるサーバー実装が多い
 
 <span style="color:gray; font-size:0.45em;">レイテンシーでwebが死ぬ</span><br>
 ↓
 +++
 ### <span style="font-size:85%">"もうやめて、HTTP/1.1のライフはゼロよ"</span>
-進化したプロトコル<br>
+<span style="color:gray; font-size:0.45em;">進化したプロトコル</span><br>
 **HTTP/2**
 
 - RTTの影響がより少ない
@@ -85,14 +90,17 @@
 ---
 ### バイナリプロトコル
 - 脆弱性を防ぐ
+<span style="font-size:0.45em;">
 	- HTTP Response Splitting Attack<br>
-<span style="font-size:0.45em;">[HTTP レスポンス分割攻撃](http://www.asahi-net.or.jp/~wv7y-kmr/memo/php_security.html#HTTPResponseSplitting)<br>
-ヘッダー内に外部入力を使用すると、ヘッダーを改竄できる脆弱性</span>
+[HTTP レスポンス分割攻撃](http://www.asahi-net.or.jp/~wv7y-kmr/memo/php_security.html#HTTPResponseSplitting) ヘッダー内に外部入力を使用すると、ヘッダーを改竄できる脆弱性
+</span>
+
 - 転送データ量の低減
-<span style="color:gray; font-size:0.6em;">
+<span style="color:gray; font-size:0.45em;">
 	- 転送単位を小さくして、レスポンス順序変更したい
 	- ヘッダーは圧縮されてバイナリになる
 </span>
+
 - 全てのデータは「フレーム」に分解して送受信
 
 ---
@@ -117,7 +125,7 @@ HTTP/1.1のヘッダは大きい
 	100個レスポンスを受け取るなら、それだけで30KB
 
 つまり100回通信するとヘッダだけで60kb<br>
-HTTP/2では、**50%〜95%** 圧縮できる
+HTTP/2では、**50%〜5%** まで圧縮できる
 
 ---
 ### HTTP/1.1とHTTP/2のTCPコネクション<br>簡易比較図
@@ -131,10 +139,10 @@ HTTP/2では、**50%〜95%** 圧縮できる
 
 ---
 ## サーバプッシュ
-- HTTP/2はRTTを隠蔽する技術
-- でも最低1RTTはいるよね?? <br> -> 実は0RTTにすることができる
-- それが「サーバプッシュ」<br> サーバがクライアントの発行するリクエストを予測してレスポンスをプッシュ
+HTTP/2はRTTを隠蔽する技術。でも最低1RTTはいるよね?? -> 0RTTにできる<br>
+それが「サーバプッシュ」<br>
 
+サーバがクライアントの発行するリクエストを予測してレスポンスをプッシュ
 ↓
 +++
 ![サーバプッシュ](http://i.yimg.jp/images/tecblog/2014-1H/http2/http2_server_push.png)
@@ -159,3 +167,6 @@ HTTP/2では、**50%〜95%** 圧縮できる
 <span style="color:gray; font-size:0.45em;">HTTP/2仕様(RFC 7540) は、2015年5月15日に発行されました<br>
 技術キャッチアップしよう</span>
 
+---
+## Thank you!!
+![Advance with Joy](assets/images/IMG_9970.JPG)
