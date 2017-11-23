@@ -69,7 +69,9 @@
 - 先行リクエストの処理に時間がかかると後続が詰まる (head-of-line blocking)
 
 ↓
+
 +++
+### Head of line blocking
 ![head-of-line blocking](assets/images/head-of-line-blocking.jpg)
 
 ---
