@@ -90,8 +90,7 @@
 <span style="color:gray; font-size:0.45em;">Google SPDYを元に仕様策定が始まった</span>
 
 ---
-## HTTP/2とは
-### 基本的な技術要素
+## HTTP/2の基本的な技術要素
 - バイナリプロトコル
 - 多重化
 - ヘッダ圧縮
@@ -167,7 +166,7 @@ HTTP/2では、**50%〜5%** まで圧縮できる
 
 ---
 ## あと
-- サーバーの実装方法もGithubにたくさんある、GoやC++での実装が多い印象
+- サーバーの実装方法のサンプルがすでにたくさんある<br><span style="color:gray; font-size:0.45em;">GoやC++での実装が多い印象</span>
 - ブラウザ・サーバー設定・アプリケーション側の対応方法もサンプルたくさん
 
 <span style="color:gray; font-size:0.6em;">HTTP/2 仕様(RFC 7540) は、2015年5月15日に公式に発行されました<br>
@@ -175,4 +174,4 @@ HTTP/2では、**50%〜5%** まで圧縮できる
 
 ---?image=assets/images/IMG_9970.JPG&size=cover
 
-<h2 style="background:rgba(255, 255, 255, 0.7); line-height:3; color:#780A1E">Thank you!!</h2>
+<h2 style="background:rgba(255, 255, 255, 0.7); line-height:3; color:#222">Thank you!!</h2>
