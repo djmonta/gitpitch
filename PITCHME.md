@@ -140,10 +140,11 @@ HTTP/2では、**50%〜5%** まで圧縮できる
 
 ---
 ## サーバプッシュ
-HTTP/2はRTTを隠蔽する技術。でも最低1RTTはいるよね??<br>
--> 0RTTにできる「サーバプッシュ」<br>
+<span style="font-size:0.5em;">HTTP/2はRTTを隠蔽する技術。<br>でも最低1RTTはいるよね??<br>
+↓<br>
+0RTTにできる「サーバプッシュ」</span><br>
 
-サーバがクライアントの発行するリクエストを予測してレスポンスをプッシュ<br>
+サーバがクライアントの発行するリクエストを<br>予測してレスポンスをプッシュ<br>
 
 ↓
 +++
@@ -159,7 +160,7 @@ HTTP/2はRTTを隠蔽する技術。でも最低1RTTはいるよね??<br>
 ## http2-explained
 - [http2 explained - The HTTP/2 book](https://daniel.haxx.se/http2/)
 
-<span style="color:gray; font-size:0.45em;">この http2-explained の中に仕様策定背景が少しだけ語られており、プロダクト開発にも通じる言葉が心に響いた</span>
+<span style="color:gray; font-size:0.45em;">この http2-explained の中に仕様策定のコンセプトがあり、<br>プロダクト開発にも通じる言葉が心に響いた</span>
 
 ---
 ## あと
@@ -170,7 +171,8 @@ HTTP/2はRTTを隠蔽する技術。でも最低1RTTはいるよね??<br>
 技術キャッチアップちゃんとします</span>
 
 ---
-![Advance with Joy](assets/images/IMG_9970.JPG)
+
+---?image=assets/images/IMG_9970.JPG&size=cover
 
 +++
 ## Thank you!!
