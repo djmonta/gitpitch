@@ -89,10 +89,8 @@
 
 ---
 ### バイナリプロトコル
-- 脆弱性を防ぐ
-<span style="font-size:0.45em;">
-	- HTTP Response Splitting Attack<br>
-[HTTP レスポンス分割攻撃](http://www.asahi-net.or.jp/~wv7y-kmr/memo/php_security.html#HTTPResponseSplitting) ヘッダー内に外部入力を使用すると、ヘッダーを改竄できる脆弱性
+- 脆弱性を防ぐ<br>
+<span style="font-size:0.45em;">HTTP Response Splitting Attack [HTTP レスポンス分割攻撃](http://www.asahi-net.or.jp/~wv7y-kmr/memo/php_security.html#HTTPResponseSplitting)<br>ヘッダー内に外部入力を使用すると、ヘッダーを改竄できる脆弱性
 </span>
 
 - 転送データ量の低減
