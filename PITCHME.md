@@ -140,9 +140,8 @@ HTTP/2では、**50%〜5%** まで圧縮できる
 
 ---
 ## サーバプッシュ
-<span style="font-size:0.5em;">HTTP/2はRTTを隠蔽する技術。<br>でも最低1RTTはいるよね??<br>
-↓<br>
-0RTTにできる「サーバプッシュ」</span><br>
+<span style="font-size:0.5em;">HTTP/2はRTTを隠蔽する技術。<br><span style="color:gray;">でも最低1RTTはいるよね??</span><br>
+→ 0RTTにできる「サーバプッシュ」</span><br>
 
 サーバがクライアントの発行するリクエストを<br>予測してレスポンスをプッシュ<br>
 
@@ -170,9 +169,6 @@ HTTP/2では、**50%〜5%** まで圧縮できる
 <span style="color:gray; font-size:0.6em;">HTTP/2 仕様(RFC 7540) は、2015年5月15日に公式に発行されました<br>
 技術キャッチアップちゃんとします</span>
 
----
-
 ---?image=assets/images/IMG_9970.JPG&size=cover
 
-+++
 ## Thank you!!
