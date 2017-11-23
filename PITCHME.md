@@ -122,10 +122,10 @@
 ### ヘッダ圧縮
 HTTP/1.1のヘッダは大きい
 - リクエスト: 最低でも300バイト程度
-- レスポンス: 通常300バイト程度<br>
-<span style="font-size:0.5em;">100個レスポンスを受け取るなら、それだけで30KB</span>
+- レスポンス: 通常300バイト程度
 
 <span style="font-size:0.5em;">つまり100回通信するとヘッダだけで60kb</span><br>
+
 HTTP/2では、**50%〜5%** まで圧縮できる
 
 ---
@@ -140,7 +140,7 @@ HTTP/2では、**50%〜5%** まで圧縮できる
 
 ---
 ## サーバプッシュ
-<span style="font-size:0.5em;">HTTP/2はRTTを隠蔽する技術。<br><span style="color:gray;">でも最低1RTTはいるよね??</span><br>
+<span style="font-size:0.5em;">HTTP/2はRTTを隠蔽する技術。<span style="color:gray;">でも最低1RTTはいるよね??</span><br>
 → 0RTTにできる「サーバプッシュ」</span><br>
 
 サーバがクライアントの発行するリクエストを<br>予測してレスポンスをプッシュ<br>
@@ -171,4 +171,4 @@ HTTP/2では、**50%〜5%** まで圧縮できる
 
 ---?image=assets/images/IMG_9970.JPG&size=cover
 
-## Thank you!!
+<h2 style="background:rgba(255, 255, 255, 0.6)">Thank you!!</h2>
