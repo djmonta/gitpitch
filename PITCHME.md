@@ -12,17 +12,6 @@
 
 ---
 
-### LINE Login
-iOS, Android, Webアプリに組み込める
-Facebookログインとか同じような仕組みはよく使われているので、ユーザーには馴染みやすい
-
----
-
-### Line Notify
-
-[LINE Notify](https://notify-bot.line.me/ja/)
-サービスを登録すれば通知を送ることができる。<br>
-Githubとの連携も簡単。私はIFTTTから使っていた
 
 ---
 
@@ -31,22 +20,14 @@ Githubとの連携も簡単。私はIFTTTから使っていた
 落合陽一
 <br>
 働き方
+
 +++
 
-### Google Spreadsheet
-
-`=IMPORTXML("https://en.wikipedia.org/wiki/Moon_landing", "//a/@href")`
-
-XPathを指定して、Webページの一部をスプレッドシートに挿入できる<br>
-自動更新で、最低1日1回は更新される。どうやらWebサイトが更新されたら、わりと早めに反映される (実感)<br>
-他にも、 `IMPORTHTML` や `IMAGE(url)` などの関数がある
 
 ---
 
-## 
+## システム設計のなんちゃら
 
-Google Spreadsheet & LINE Messaging API (developer) で毎日Webサイトの情報を配信するとか<br>
-LINE botからボタンポチポチで勤怠管理とか [HATARA CLOCK](http://tech-portfolio.org/)
 
 +++
 
