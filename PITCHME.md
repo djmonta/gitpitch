@@ -1,10 +1,14 @@
-# <span style="color:#e49436">Google App Script</span> & <span style="color:#e49436">LINE bot</span>
-<span style="font-size:0.9rem">〜簡単なサンプルを添えて〜</span>
+# 2017年に読んだ 本
+
+## リーダブルコード
+
 
 ---
 
-## LINE Notify & LINE Login
-[LINE Developers](https://developers.line.me/ja/)
+## Joy, Inc.
+![Joy, Inc.](assets/images/joy.jpg)
+<br>
+開発プロセス・マネジメント
 
 ---
 
@@ -22,11 +26,11 @@ Githubとの連携も簡単。私はIFTTTから使っていた
 
 ---
 
-## Google App Script
-Javascriptで記述<br>
-Google Spreadsheetに記録したり、Gmailからメール送信したり、Googleの他サービスとの連携が簡単。<br>
-トリガーを指定して関数呼び出しを設定できる
-
+## 超AI時代の生存戦略 ―― シンギュラリティ<2040年代>に備える34のリスト
+![Joy, Inc.](assets/images/super-ai.jpg)
+落合陽一
+<br>
+働き方
 +++
 
 ### Google Spreadsheet
@@ -39,7 +43,7 @@ XPathを指定して、Webページの一部をスプレッドシートに挿入
 
 ---
 
-## たとえば
+## 
 
 Google Spreadsheet & LINE Messaging API (developer) で毎日Webサイトの情報を配信するとか<br>
 LINE botからボタンポチポチで勤怠管理とか [HATARA CLOCK](http://tech-portfolio.org/)
