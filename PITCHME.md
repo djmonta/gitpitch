@@ -1,6 +1,8 @@
 # 2017年に読んだ 本
 
-## リーダブルコード ―より良いコードを書くためのシンプルで実践的なテクニック (Theory in practice)
+---
+## リーダブルコード
+―より良いコードを書くためのシンプルで実践的なテクニック (Theory in practice)<br>
 Dustin Boswell (著),‎ Trevor Foucher (著),‎ 須藤 功平 (解説),‎ 角 征典  (翻訳)<br>
 ![Readable Code](assets/images/readable.jpg)<br>
 数々のエンジニアが影響を受けた本<br>
@@ -18,10 +20,10 @@ Dustin Boswell (著),‎ Trevor Foucher (著),‎ 須藤 功平 (解説),‎ 角
 
 ---
 
-## 現場で役立つシステム設計の原則 ~変更を楽で安全にするオブジェクト指向の実践技法
-増田 亨 (著)
-![システム設計](assets/images/genba.jpg)
-<br>
+## 現場で役立つシステム設計の原則
+~変更を楽で安全にするオブジェクト指向の実践技法<br>
+増田 亨 (著)<br>
+![システム設計](assets/images/genba.jpg)<br>
 ドメイン駆動開発、オブジェクト指向の開発手法について。
 
 +++
@@ -50,9 +52,10 @@ Dustin Boswell (著),‎ Trevor Foucher (著),‎ 須藤 功平 (解説),‎ 角
 
 ---
 
-## 超AI時代の生存戦略 ―― シンギュラリティ<2040年代>に備える34のリスト
+## 超AI時代の生存戦略
+―― シンギュラリティ<2040年代>に備える34のリスト<br>
+落合陽一 (著)<br>
 ![超AI時代の生存戦略](assets/images/super-ai.jpg)<br>
-落合陽一 (著)
 <br>
 働き方について考えさせられた。
 
